@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using fantasy_life_i_material_API.Models;
+using fantasy_life_i_material_API.Services.MaterialService;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace fantasy_life_i_material_API.Controllers
@@ -7,6 +9,13 @@ namespace fantasy_life_i_material_API.Controllers
     [ApiController]
     public class MaterialController : ControllerBase
     {
+        private readonly IMaterialService _materialService;
+
+        public MaterialController(IMaterialService materialService)
+        {
+            this._materialService = materialService;
+        }
+
         static private List<Material> materials = new List<Material>
         {
             new Material

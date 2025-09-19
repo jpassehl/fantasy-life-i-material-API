@@ -1,4 +1,4 @@
-﻿namespace fantasy_life_i_material_API
+﻿namespace fantasy_life_i_material_API.Models
 {
     public class Material
     {
