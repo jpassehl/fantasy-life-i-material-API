@@ -1,6 +1,6 @@
 @fantasy_life_i_material_API_HostAddress = http://localhost:5112
 
-GET {{fantasy_life_i_material_API_HostAddress}}/weatherforecast/
+GET {{fantasy_life_i_material_API_HostAddress}}/api/Material
 Accept: application/json
 
 ###
