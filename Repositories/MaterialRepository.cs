@@ -19,11 +19,11 @@ namespace fantasy_life_i_material_API.Repositories
         {
             return await _context.Materials.FindAsync(id);
         }
-
-        //public async Task AddAsync(Material material)
-        //{
-        //    await _context.Materials.AddAsync(material);
-        //}
+        public async Task AddAsync(Material material)
+        {
+            await _context.Materials.AddAsync(material); //Only Tracking Begun
+            await _context.SaveChangesAsync(); //Saves All Changes
+        }
 
         //public void Update(Material material)
         //{
