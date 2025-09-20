@@ -15,12 +15,10 @@ namespace fantasy_life_i_material_API.Repositories
             return await _context.Materials.ToListAsync();
 
         }
-
-        //public async Task<Material?> FindByIdAsync(int id)
-        //{
-        //    return await _context.Materials.FindAsync(id);
-        //}
-
+        public async Task<Material?> FindByIdAsync(int id)
+        {
+            return await _context.Materials.FindAsync(id);
+        }
 
         //public async Task AddAsync(Material material)
         //{

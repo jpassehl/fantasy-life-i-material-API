@@ -6,5 +6,7 @@ namespace fantasy_life_i_material_API.Services.MaterialService
     public interface IMaterialService
     {
         Task<IEnumerable<Material>> ListAsync();
+        Task<Material> GetMaterialAsync(int id);
+
     }
 }
