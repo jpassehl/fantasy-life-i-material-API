@@ -1,4 +1,5 @@
-﻿using fantasy_life_i_material_API.Models;
+﻿using Azure;
+using fantasy_life_i_material_API.Models;
 using Microsoft.Extensions.Logging;
 
 namespace fantasy_life_i_material_API.Services.MaterialService
@@ -9,6 +10,7 @@ namespace fantasy_life_i_material_API.Services.MaterialService
         Task<Material> GetAsync(int id);
         Task<Material> SaveAsync(Material material);
         Task<Material> UpdateAsync(int id, Material material);
+        Task<Material> DeleteAsync(int id);
 
     }
 }

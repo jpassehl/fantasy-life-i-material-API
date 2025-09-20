@@ -54,16 +54,15 @@ namespace fantasy_life_i_material_API.Controllers
             }
             return NoContent();
         }
-        //[HttpDelete("{id}")]
-        //public IActionResult DeleteMaterial(int id) 
-        //{
-        //    var material = materials.FirstOrDefault(m => m.Id == id);
-        //    if (material is null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    materials.Remove(material);
-        //    return NoContent();
-        //}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMaterial(int id) 
+        {
+            var result = await this._materialService.DeleteAsync(id);
+            if (result is null)
+            {
+                return NotFound();
+            }
+            return NoContent();
+        }
     }
 }

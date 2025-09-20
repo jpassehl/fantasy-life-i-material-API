@@ -66,6 +66,23 @@ namespace fantasy_life_i_material_API.Services.MaterialService
                 throw; // Ensure the exception is propagated to maintain proper error handling.
             }
         }
+        public async Task<Material> DeleteAsync(int id)
+        {
+            var existingMaterial = await _materialRepository.FindByIdAsync(id);
+
+            try
+            {
+                _materialRepository.Remove(existingMaterial);
+                await _unitOfWork.CompleteAsync();
+
+                return existingMaterial;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Message: {ex.Message}");
+                throw; // Ensure the exception is propagated to maintain proper error handling.
+            }
+        }
 
     }
 }

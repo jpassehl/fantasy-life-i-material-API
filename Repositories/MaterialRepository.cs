@@ -30,9 +30,10 @@ namespace fantasy_life_i_material_API.Repositories
              _context.Materials.Update(material);
              _context.SaveChanges();
         }
-        //public void Remove(Material material)
-        //{
-        //    _context.Materials.Remove(material);
-        //}
+        public void Remove(Material material)
+        {
+            _context.Materials.Remove(material);
+            _context.SaveChanges();
+        }
     }
 }
