@@ -8,6 +8,7 @@ namespace fantasy_life_i_material_API.Services.MaterialService
         Task<IEnumerable<Material>> ListAsync();
         Task<Material> GetAsync(int id);
         Task<Material> SaveAsync(Material material);
+        Task<Material> UpdateAsync(int id, Material material);
 
     }
 }

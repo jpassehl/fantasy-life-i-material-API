@@ -7,7 +7,7 @@ namespace fantasy_life_i_material_API.Repositories
         Task<IEnumerable<Material>> ListAsync();
         Task<Material?> FindByIdAsync(int id);
         Task AddAsync(Material material);
-        //void Update(Material material);
+        void Update(Material material);
         //void Remove(Material material);
     }
 }

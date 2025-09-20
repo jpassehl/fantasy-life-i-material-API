@@ -44,23 +44,16 @@ namespace fantasy_life_i_material_API.Controllers
 
             return CreatedAtAction(nameof(GetMaterialById), new { id = newMaterial.Id }, newMaterial);
         }
-        //[HttpPut("{id}")]
-        //public IActionResult UpdateMaterial (int id, Material updatedMaterial)
-        //{
-        //    var material = materials.FirstOrDefault(m => m.Id == id);
-        //    if(material is null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    material.Name = updatedMaterial.Name;
-        //    material.Type = updatedMaterial.Type;
-        //    material.Gatherable = updatedMaterial.Gatherable;
-        //    material.GatheredFrom = updatedMaterial.GatheredFrom;
-        //    material.LifeRequired = updatedMaterial.LifeRequired;
-        //    material.Category = updatedMaterial.Category;
-
-        //    return NoContent();
-        //}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateMaterial (int id, Material updatedMaterial)
+        {
+            var result  = await _materialService.UpdateAsync(id, updatedMaterial);
+            if(result is null)
+            {
+                return NotFound();
+            }
+            return NoContent();
+        }
         //[HttpDelete("{id}")]
         //public IActionResult DeleteMaterial(int id) 
         //{

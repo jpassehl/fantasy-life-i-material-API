@@ -42,6 +42,30 @@ namespace fantasy_life_i_material_API.Services.MaterialService
                 throw; // Ensure the exception is propagated to maintain proper error handling.
             }
         }
+        public async Task<Material> UpdateAsync(int id, Material material)
+        {
+            var existingMaterial = await _materialRepository.FindByIdAsync(id);
+
+            existingMaterial.Name = material.Name;
+            existingMaterial.Type = material.Type;
+            existingMaterial.Gatherable = material.Gatherable;
+            existingMaterial.GatheredFrom = material.GatheredFrom;
+            existingMaterial.LifeRequired = material.LifeRequired;
+            existingMaterial.Category = material.Category;
+
+            try
+            {
+                _materialRepository.Update(existingMaterial);
+                await _unitOfWork.CompleteAsync();
+
+                return existingMaterial;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Message: {ex.Message}");
+                throw; // Ensure the exception is propagated to maintain proper error handling.
+            }
+        }
 
     }
 }
