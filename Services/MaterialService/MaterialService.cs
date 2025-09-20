@@ -1,4 +1,5 @@
 ﻿
+using fantasy_life_i_material_API.Data;
 using fantasy_life_i_material_API.Models;
 using fantasy_life_i_material_API.Repositories;
 

@@ -1,4 +1,4 @@
-﻿namespace fantasy_life_i_material_API.Repositories
+﻿namespace fantasy_life_i_material_API.Data
 {
     public interface IUnitOfWork
     {
