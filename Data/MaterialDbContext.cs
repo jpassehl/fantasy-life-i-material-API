@@ -19,8 +19,7 @@ namespace fantasy_life_i_material_API.Data
                 {
                     Id = 1,
                     Name = "Starry Log",
-                    Type = "Log",
-                    Gatherable = true,
+                    Crafted = false,
                     GatheredFrom = ["Starry Tree", "Great Starry Tree"],
                     LifeRequired = "Woodcuter",
                     Category = "Carpentry Material"
@@ -29,8 +28,7 @@ namespace fantasy_life_i_material_API.Data
             {
                 Id = 2,
                 Name = "Swolean Gold",
-                Type = "Ore",
-                Gatherable = true,
+                Crafted = false,
                 GatheredFrom = [
                     "Gold Deposit","Great Gold Deposit",
                     "Superior Gold Deposit","Amazing Gold Deposit"
@@ -42,8 +40,7 @@ namespace fantasy_life_i_material_API.Data
             {
                 Id = 3,
                 Name = "Sunny Puff",
-                Type = "Plant",
-                Gatherable = true,
+                Crafted = false,
                 GatheredFrom = ["Ground"],
                 LifeRequired = null,
                 Category = "Tailoring Material"
@@ -52,8 +49,7 @@ namespace fantasy_life_i_material_API.Data
             {
                 Id = 4,
                 Name = "Red Anthurium",
-                Type = "Plant",
-                Gatherable = true,
+                Crafted = false,
                 GatheredFrom = ["Ground"],
                 LifeRequired = null,
                 Category = "Artistry Material"

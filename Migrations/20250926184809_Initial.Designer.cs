@@ -11,8 +11,8 @@ using fantasy_life_i_material_API.Data;
 namespace fantasy_life_i_material_API.Migrations
 {
     [DbContext(typeof(MaterialDbContext))]
-    [Migration("20250920173319_Seeding")]
-    partial class Seeding
+    [Migration("20250926184809_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,7 @@ namespace fantasy_life_i_material_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Gatherable")
+                    b.Property<bool>("Crafted")
                         .HasColumnType("bit");
 
                     b.PrimitiveCollection<string>("GatheredFrom")
@@ -50,10 +50,6 @@ namespace fantasy_life_i_material_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Materials");
@@ -63,39 +59,35 @@ namespace fantasy_life_i_material_API.Migrations
                         {
                             Id = 1,
                             Category = "Carpentry Material",
-                            Gatherable = true,
+                            Crafted = false,
                             GatheredFrom = "[\"Starry Tree\",\"Great Starry Tree\"]",
                             LifeRequired = "Woodcuter",
-                            Name = "Starry Log",
-                            Type = "Log"
+                            Name = "Starry Log"
                         },
                         new
                         {
                             Id = 2,
                             Category = "Smithing Material",
-                            Gatherable = true,
+                            Crafted = false,
                             GatheredFrom = "[\"Gold Deposit\",\"Great Gold Deposit\",\"Superior Gold Deposit\",\"Amazing Gold Deposit\"]",
                             LifeRequired = "Miner",
-                            Name = "Swolean Gold",
-                            Type = "Ore"
+                            Name = "Swolean Gold"
                         },
                         new
                         {
                             Id = 3,
                             Category = "Tailoring Material",
-                            Gatherable = true,
+                            Crafted = false,
                             GatheredFrom = "[\"Ground\"]",
-                            Name = "Sunny Puff",
-                            Type = "Plant"
+                            Name = "Sunny Puff"
                         },
                         new
                         {
                             Id = 4,
                             Category = "Artistry Material",
-                            Gatherable = true,
+                            Crafted = false,
                             GatheredFrom = "[\"Ground\"]",
-                            Name = "Red Anthurium",
-                            Type = "Plant"
+                            Name = "Red Anthurium"
                         });
                 });
 #pragma warning restore 612, 618

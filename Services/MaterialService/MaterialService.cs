@@ -47,8 +47,7 @@ namespace fantasy_life_i_material_API.Services.MaterialService
             var existingMaterial = await _materialRepository.FindByIdAsync(id);
 
             existingMaterial.Name = material.Name;
-            existingMaterial.Type = material.Type;
-            existingMaterial.Gatherable = material.Gatherable;
+            existingMaterial.Crafted = material.Crafted;
             existingMaterial.GatheredFrom = material.GatheredFrom;
             existingMaterial.LifeRequired = material.LifeRequired;
             existingMaterial.Category = material.Category;
